@@ -3,7 +3,8 @@ toc: true
 layout: post
 description: Important Ideas and Terms
 categories: [markdown]
-title: Vocabulary
+title: Fastpages Notes
+images: /images/input-primitive-types.png
 ---
 # Notes
 
