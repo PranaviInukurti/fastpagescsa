@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Bash and Installation Checks" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Check for all Bash Installations" />
-<meta property="og:description" content="Check for all Bash Installations" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html" />
 <meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html" />
 <meta property="og:site_name" content="fastpages" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Bash and Installation Checks" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"Check for all Bash Installations","headline":"Bash and Installation Checks","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Bash and Installation Checks","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/2022/08/25/bash-and-check.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Bash and Installation Checks</h1><p class="page-description">Check for all Bash Installations</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-25T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Bash and Installation Checks</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-25T00:00:00-05:00" itemprop="datePublished">
         Aug 25, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -127,7 +127,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bash-Basics">Bash Basics<a class="anchor-link" href="#Bash-Basics"> </a></h1>
+<h1 id="Directory-Check">Directory Check<a class="anchor-link" href="#Directory-Check"> </a></h1>
 </div>
 </div>
 </div>
@@ -142,12 +142,6 @@ window.onload = wrap_img;
 
 <span class="c1">## chooses the current working directory</span>
 <span class="nb">cd</span> vscode
-
-<span class="c1">## shows the list of content in this working directory</span>
-ls -al
-
-<span class="c1">## shows the contents of the file README.md</span>
-cat README.md
 </pre></div>
 
     </div>
@@ -159,7 +153,7 @@ cat README.md
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-Installed-Versions">Python Installed Versions<a class="anchor-link" href="#Python-Installed-Versions"> </a></h1>
+<h1 id="Python,-Java,-and-Jupyter-Check">Python, Java, and Jupyter Check<a class="anchor-link" href="#Python,-Java,-and-Jupyter-Check"> </a></h1>
 </div>
 </div>
 </div>
@@ -172,6 +166,10 @@ cat README.md
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>python --version
 python2 --version
+java --version
+javac --version
+jupyter --version
+jupyter kernelspec list
 </pre></div>
 
     </div>
@@ -186,6 +184,30 @@ python2 --version
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Python 3.9.12
 Python 2.7.18
+openjdk 17.0.4 2022-07-19
+OpenJDK Runtime Environment Temurin-17.0.4+8 (build 17.0.4+8)
+OpenJDK 64-Bit Server VM Temurin-17.0.4+8 (build 17.0.4+8, mixed mode, sharing)
+javac 17.0.4
+Selected Jupyter core packages...
+IPython          : 8.2.0
+ipykernel        : 6.9.1
+ipywidgets       : 7.6.5
+jupyter_client   : 6.1.12
+jupyter_core     : 4.9.2
+jupyter_server   : 1.13.5
+jupyterlab       : 3.3.2
+nbclient         : 0.5.13
+nbconvert        : 6.4.4
+nbformat         : 5.3.0
+notebook         : 6.4.8
+qtconsole        : 5.3.0
+traitlets        : 5.1.1
+Available kernels:
+  python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e    /Users/sri/.vscode/extensions/ms-toolsai.jupyter-2022.7.1102252217/temp/jupyter/kernels/python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e
+  bash                                                                                      /Users/sri/Library/Jupyter/kernels/bash
+  java                                                                                      /Users/sri/Library/Jupyter/kernels/java
+  javascript                                                                                /Users/sri/Library/Jupyter/kernels/javascript
+  python3                                                                                   /Users/sri/opt/anaconda3/share/jupyter/kernels/python3
 </pre>
 </div>
 </div>
@@ -229,141 +251,6 @@ Python 2.7.18
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Conda and jupyter were correctly installed.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Check-for-Jupyter">Check for Jupyter<a class="anchor-link" href="#Check-for-Jupyter"> </a></h1>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>jupyter --version
-jupyter kernelspec list
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Selected Jupyter core packages...
-IPython          : 8.2.0
-ipykernel        : 6.9.1
-ipywidgets       : 7.6.5
-jupyter_client   : 6.1.12
-jupyter_core     : 4.9.2
-jupyter_server   : 1.13.5
-jupyterlab       : 3.3.2
-nbclient         : 0.5.13
-nbconvert        : 6.4.4
-nbformat         : 5.3.0
-notebook         : 6.4.8
-qtconsole        : 5.3.0
-traitlets        : 5.1.1
-Available kernels:
-  python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e    /Users/sri/.vscode/extensions/ms-toolsai.jupyter-2022.7.1102252217/temp/jupyter/kernels/python3106jvsc74a57bd0b0fa6594d8f4cbf19f97940f81e996739fb7646882a419484c72d19e05852a7e
-  bash                                                                                      /Users/sri/Library/Jupyter/kernels/bash
-  java                                                                                      /Users/sri/Library/Jupyter/kernels/java
-  javascript                                                                                /Users/sri/Library/Jupyter/kernels/javascript
-  python3                                                                                   /Users/sri/opt/anaconda3/share/jupyter/kernels/python3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Java-Check">Java Check<a class="anchor-link" href="#Java-Check"> </a></h1>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>java --version
-javac --version
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>openjdk 17.0.4 2022-07-19
-OpenJDK Runtime Environment Temurin-17.0.4+8 (build 17.0.4+8)
-OpenJDK 64-Bit Server VM Temurin-17.0.4+8 (build 17.0.4+8, mixed mode, sharing)
-javac 17.0.4
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Javascript-Check">Javascript Check<a class="anchor-link" href="#Javascript-Check"> </a></h1>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>npm --version
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>6.4.1
 </pre>
 </div>
 </div>
