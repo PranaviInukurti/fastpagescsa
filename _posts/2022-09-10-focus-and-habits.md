@@ -1,3 +1,11 @@
+---
+toc: true
+layout: post
+description: Important Ideas and Terms
+categories: [markdown]
+title: Fastpages Notes
+images: /images/input-primitive-types.png
+---
 # Focus and Habits
 
 ## Blog Purpose
