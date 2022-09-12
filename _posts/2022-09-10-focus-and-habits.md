@@ -1,11 +1,11 @@
 ---
 toc: true
 layout: post
-description: Important Ideas and Terms
+description: Takeaways from Harvard Video
 categories: [markdown]
-title: Fastpages Notes
-images: /images/input-primitive-types.png
+title: Focus and Habits
 ---
+
 # Focus and Habits
 
 ## Blog Purpose
