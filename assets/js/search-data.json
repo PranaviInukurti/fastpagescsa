@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "FRQ 1 (Question 1)",
-            "content": "Part a . I first compare the &quot;guess&quot; to &quot;secret.&quot; Then, . public int scoreGuess (String guess) { int count = 0 for (int i = 0; i &lt;= secret.length() - guess.length(); i++) { if (secret.substring(i, i + guess.length()).equals(guess)) { count++; } } return count * guess.length() * guess.length(); } . Part b . public String findBetterGuess(String guess1, String guess2) { if (scoreGuess(guess1) &gt; scoreGuess(guess2)) { return guess1; } if (scoreGuess(guess2) &gt; scoreGuess(guess1)) { return guess2; } if (guess1.compareTo(guess2) &gt; 0) { return guess1; } return guess2; } .",
+            "content": "Part a . public int scoreGuess (String guess) { int count = 0 for (int i = 0; i &lt;= secret.length() - guess.length(); i++) { if (secret.substring(i, i + guess.length()).equals(guess)) { count++; } } return count * guess.length() * guess.length(); } . Part b . public String findBetterGuess(String guess1, String guess2) { if (scoreGuess(guess1) &gt; scoreGuess(guess2)) { return guess1; } if (scoreGuess(guess2) &gt; scoreGuess(guess1)) { return guess2; } if (guess1.compareTo(guess2) &gt; 0) { return guess1; } return guess2; } .",
             "url": "https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/09/14/free-response-questions.html",
             "relUrl": "/jupyter/2022/09/14/free-response-questions.html",
             "date": " • Sep 14, 2022"
