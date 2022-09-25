@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      2 min read
     
 </span></p>
 
@@ -261,132 +261,10 @@ window.onload = wrap_img;
 &lt;/div&gt;
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="IJavaScript-and-Table-formatting-using-toHTML-method">IJavaScript and Table formatting using toHTML method<a class="anchor-link" href="#IJavaScript-and-Table-formatting-using-toHTML-method"> </a></h3><p>This example builds a <mark>Classroom method _toHTML</mark> which is passed to the IJavaScript interpreter $$.html which renders output similarly to a real website.</p>
-<ul>
-<li>JavaScript in the _toHTML method is broken into three parts...<ul>
-<li>Style part is building CSS inline formatting</li>
-<li>Body part is constructing the Table Rows (tr), Table Headings (th), and Table Data (td).  The table data is obtained from a Classroom object.  The JavaScript for loop allows the construction of a new row of data for each index in the Array.</li>
-<li>Return part create the HTML fragment for rendering</li>
-</ul>
-</li>
-<li>The last line in the example <mark>$$.html is IJavaScript HTML interpreter</mark> and by passing the parameter of the _toHTML method it obtains HTML to render</li>
-</ul>
-<p><a href="http://n-riesco.github.io/ijavascript/doc/custom.ipynb.html?ref=morioh.com&amp;utm_source=morioh.com">Reference</a></p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define an HTML conversion &quot;method&quot; associated with Classroom</span>
-<span class="nx">Classroom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// HTML Style is build using inline structure</span>
-  <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;display:inline-block;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;border: 2px solid grey;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;box-shadow: 0.8em 0.4em 0.4em grey;&quot;</span>
-  <span class="p">);</span>
-
-  <span class="c1">// HTML Body of Table is build as a series of concatenations (+=)</span>
-  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="c1">// Heading for Array Columns</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Name&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;GitHub ID&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Class Of&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Role&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">;</span>
-  <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">in</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// tr for each row, a new line</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-    <span class="c1">// td for each column of data</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">ghID</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">classOf</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="c1">// tr to end line</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-
-   <span class="c1">// Build and HTML fragment of div, table, table body</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="s2">&quot;&lt;div style=&#39;&quot;</span> <span class="o">+</span> <span class="nx">style</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span> <span class="o">+</span>
-      <span class="s2">&quot;&lt;table&gt;&quot;</span> <span class="o">+</span>
-        <span class="nx">body</span> <span class="o">+</span>
-      <span class="s2">&quot;&lt;/table&gt;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;&lt;/div&gt;&quot;</span>
-  <span class="p">);</span>
-
-<span class="p">};</span>
-
-<span class="c1">// IJavaScript HTML processor receive parameter of defined HTML fragment</span>
-<span class="nx">$$</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">compsci</span><span class="p">.</span><span class="nx">_toHtml</span><span class="p">());</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="display:inline-block;border: 2px solid grey;box-shadow: 0.8em 0.4em 0.4em grey;"><table><tr><th><mark>Name</mark></th><th><mark>GitHub ID</mark></th><th><mark>Class Of</mark></th><th><mark>Role</mark></th></tr><tr><td>Mr M</td><td>jm1021</td><td>1977</td><td>Teacher</td><tr><tr><td>Anthony</td><td>tonyhieu</td><td>2022</td><td>Student</td><tr><tr><td>Bria</td><td>B-G101</td><td>2023</td><td>Student</td><tr><tr><td>Allie</td><td>xiaoa0</td><td>2023</td><td>Student</td><tr><tr><td>Tigran</td><td>Tigran7</td><td>2023</td><td>Student</td><tr><tr><td>Rebecca</td><td>Rebecca-123</td><td>2023</td><td>Student</td><tr>&lt;/table&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><blockquote><p>Objective of JavaScript is to produce frontend code.  Working in Jupyter Notebooks could help in the process of visualizing design with short and interactive feedback.  However, my hope is that you move to Fastpages and play with Frontend code in that environment and do the REAL thing.  Here is my suggestion.</p>
-<p>Design UI screens that are prototypes for your project.  Design at least one screen with data from a structure (like Person data above),  that is used to dynamically create HTML. As an alternative to HTML text method above, look at Jokes post and usage createElement...</p>
-</blockquote>
-<div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">resultContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">);</span>
-<span class="p">...</span> <span class="nx">build</span> <span class="nx">data</span> <span class="nx">table</span> <span class="p">....</span>
-<span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// tr for each row</span>
-    <span class="kr">const</span> <span class="nx">tr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">);</span>
-    <span class="c1">// td for each column</span>
-    <span class="kr">const</span> <span class="nx">joke</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">haha</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">boohoo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
-    <span class="c1">// data is specific to the API</span>
-    <span class="nx">joke</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">joke</span><span class="p">;</span>
-    <span class="nx">haha</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">haha</span><span class="p">;</span> 
-    <span class="nx">boohoo</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">boohoo</span><span class="p">;</span> 
-    <span class="c1">// this build td&#39;s into tr</span>
-    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">joke</span><span class="p">);</span>
-    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">haha</span><span class="p">);</span>
-    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">boohoo</span><span class="p">);</span>
-    <span class="c1">// add HTML to container</span>
-    <span class="nx">resultContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tr</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-</div>
-</div>
-</div>
 &lt;/div&gt;
  
 
-</tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></table></div></div></div></div></div></div></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></table></div></div></div></div></div></div></div>
+</tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></table></div></div></div></div></div></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
