@@ -254,22 +254,22 @@ window.onload = wrap_img;
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaExample</span> <span class="p">{</span>
    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
       <span class="cm">/* Creating ArrayList of type &quot;String&quot;*/</span>
-      <span class="c1">//ArrayList&lt;String&gt; obj = new ArrayList&lt;String&gt;();</span>
+      <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
 
-      <span class="cm">/*adds elements to the ArrayList*/</span>
-      <span class="cm">/*obj.add(&quot;Rebecca&quot;);</span>
-<span class="cm">      obj.add(&quot;Saathvika&quot;);</span>
-<span class="cm">      obj.add(&quot;Sarayu&quot;);</span>
-<span class="cm">      obj.add(&quot;Prisha&quot;);</span>
-<span class="cm">      obj.add(&quot;William&quot;);</span>
-<span class="cm">      obj.add(&quot;Vidhi&quot;);</span>
-<span class="cm">      obj.add(&quot;Shreya&quot;);</span>
-<span class="cm">      obj.add(&quot;Tianbin&quot;);</span>
+      <span class="cm">/*dds elements to the ArrayList*/</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Rebecca&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Saathvika&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Sarayu&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Prisha&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;William&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Vidhi&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Shreya&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Tianbin&quot;</span><span class="p">);</span>
 
-<span class="cm">      // Displaying elements</span>
-<span class="cm">      System.out.println(&quot;Starting Students Signed Up:&quot;);</span>
-<span class="cm">      for(String str:obj)</span>
-<span class="cm">         System.out.println(str); */</span>
+      <span class="c1">// Displaying elements</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Starting Students Signed Up:&quot;</span><span class="p">);</span>
+      <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">:</span><span class="n">obj</span><span class="p">)</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span> 
       
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;the students are added to the arrayList&quot;</span><span class="p">);</span>
 
@@ -278,36 +278,88 @@ window.onload = wrap_img;
 <span class="cm">       * obj.add(1, &quot;Surya&quot;) - Adding element &quot;Surya&quot; to the second position in the list</span>
 <span class="cm">       */</span>
 
-      <span class="cm">/*obj.add(0, &quot;Rohan&quot;);</span>
-<span class="cm">      obj.add(1, &quot;Surya&quot;);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Rohan&quot;</span><span class="p">);</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Surya&quot;</span><span class="p">);</span>
 
-<span class="cm">      // Displaying elements of the new list</span>
-<span class="cm">      System.out.println(&quot;Updated Students List (Additions):&quot;);</span>
-<span class="cm">      for(String str:obj)</span>
-<span class="cm">         System.out.println(str);</span>
+      <span class="c1">// Displaying elements of the new list</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Updated Students List (Additions):&quot;</span><span class="p">);</span>
+      <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">:</span><span class="n">obj</span><span class="p">)</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 
-<span class="cm">      //Remove elements from the ArrayList</span>
-<span class="cm">      obj.remove(&quot;Sarayu&quot;); //Removes &quot;Sarayu&quot; from the list</span>
-<span class="cm">      obj.remove(&quot;Saathvika&quot;); //Removes &quot;Saathvika&quot; from the list</span>
+      <span class="c1">//Remove elements from the ArrayList</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Sarayu&quot;</span><span class="p">);</span> <span class="c1">//Removes &quot;Sarayu&quot; from the list</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Saathvika&quot;</span><span class="p">);</span> <span class="c1">//Removes &quot;Saathvika&quot; from the list</span>
 
-<span class="cm">      // Displaying elements of the newer list</span>
-<span class="cm">      System.out.println(&quot;Updated Students List (Removals):&quot;);</span>
-<span class="cm">      for(String str:obj)</span>
-<span class="cm">         System.out.println(str);</span>
+      <span class="c1">// Displaying elements of the newer list</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Updated Students List (Removals):&quot;</span><span class="p">);</span>
+      <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">:</span><span class="n">obj</span><span class="p">)</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 
-<span class="cm">      //Remove element from the mentioned index in the list</span>
-<span class="cm">      obj.remove(1); //Removes the second element from the list</span>
+      <span class="c1">//Remove element from the mentioned index in the list</span>
+      <span class="n">obj</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//Removes the second element from the list</span>
 
-<span class="cm">      // Displaying elements of the final most/most newly updated list</span>
-<span class="cm">      System.out.println(&quot;Final Students List:&quot;);</span>
-<span class="cm">      for(String str:obj)</span>
-<span class="cm">         System.out.println(str); */</span>
+      <span class="c1">// Displaying elements of the final most/most newly updated list</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Final Students List:&quot;</span><span class="p">);</span>
+      <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">:</span><span class="n">obj</span><span class="p">)</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span> 
    <span class="p">}</span>
    
-<span class="p">}</span>
+<span class="p">}</span> 
+<span class="n">JavaExample</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Starting Students Signed Up:
+Rebecca
+Saathvika
+Sarayu
+Prisha
+William
+Vidhi
+Shreya
+Tianbin
+the students are added to the arrayList
+Updated Students List (Additions):
+Rohan
+Surya
+Rebecca
+Saathvika
+Sarayu
+Prisha
+William
+Vidhi
+Shreya
+Tianbin
+Updated Students List (Removals):
+Rohan
+Surya
+Rebecca
+Prisha
+William
+Vidhi
+Shreya
+Tianbin
+Final Students List:
+Rohan
+Rebecca
+Prisha
+William
+Vidhi
+Shreya
+Tianbin
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
