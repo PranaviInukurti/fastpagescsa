@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ArrayLists Lesson | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="ArrayLists Lesson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A lesson/set of notes on the basics of Arraylists" />
+<meta property="og:description" content="A lesson/set of notes on the basics of Arraylists" />
+<link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/10/06/arraylists.html" />
+<meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/10/06/arraylists.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-06T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ArrayLists Lesson" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-06T00:00:00-05:00","datePublished":"2022-10-06T00:00:00-05:00","description":"A lesson/set of notes on the basics of Arraylists","headline":"ArrayLists Lesson","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/10/06/arraylists.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/10/06/arraylists.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagescsa/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagescsa/about/">About Me</a><a class="page-link" href="/fastpagescsa/search/">Search</a><a class="page-link" href="/fastpagescsa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ArrayLists Lesson</h1><p class="page-description">A lesson/set of notes on the basics of Arraylists</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-06T00:00:00-05:00" itemprop="datePublished">
+        Oct 6, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagescsa/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/PranaviInukurti/fastpagescsa/tree/master/_notebooks/2022-10-06-arraylists.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagescsa/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/PranaviInukurti/fastpagescsa/master?filepath=_notebooks%2F2022-10-06-arraylists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/PranaviInukurti/fastpagescsa/blob/master/_notebooks/2022-10-06-arraylists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FPranaviInukurti%2Ffastpagescsa%2Fblob%2Fmaster%2F_notebooks%2F2022-10-06-arraylists.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-10-06-arraylists.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Arrays-vs-ArrayLists">Arrays vs ArrayLists<a class="anchor-link" href="#Arrays-vs-ArrayLists"> </a></h3><p>The main difference between an array and an arraylist is that arraylists can grow and shrink whereas arrays can't. Arrays have a fixed length so once it is full, more elements cannot be added. If elements are removed from an Arrays, the maximum about of space will not shrink. However, ArrayLists can adjust dynamically in regards to elements. Essentially in Java, ArrayLists can:</p>
+<ul>
+<li>ArrayList can grow and shrink based on the whether you add / remove elements</li>
+<li>ArrayList can contain duplicate elements</li>
+<li>ArrayList maintains the insertion order (elements appear in the same order in which they are inserted)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods-of-ArrayLists">Methods of ArrayLists<a class="anchor-link" href="#Methods-of-ArrayLists"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>addAll(int index, Collection collection)<ul>
+<li>Adds all elements in the above collection to the list; and when a parameter is passed, it adds all the elements of the collection to the end</li>
+</ul>
+</li>
+<li>add(int index, element) <ul>
+<li>Adds an element at a specific spot in the list; but when a parameter is passed, it will just add the element at the end</li>
+</ul>
+</li>
+<li>clear() <ul>
+<li>Removes all the elements in the list</li>
+<li>Reference of the list created is still stored.</li>
+</ul>
+</li>
+<li>containsAll(Collection collection) <ul>
+<li>Checks if the list contains all the elements in the mentioned collection</li>
+</ul>
+</li>
+<li>contains(element) <ul>
+<li>Checks if the list contains the mentioned element<ul>
+<li>Returns true if the element is in the list</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>equals(element) <ul>
+<li>Compares the equality of the mentioned element with other present elements</li>
+</ul>
+</li>
+<li>get(int index) <ul>
+<li>Returns elements at the specified index</li>
+</ul>
+</li>
+<li>hashCode() <ul>
+<li>Returns the hashcode (an integer value that is associated with each object in Java language) value of the list</li>
+</ul>
+</li>
+<li>indexOf(element) <ul>
+<li>Returns the first-placed of the mentioned element<ul>
+<li>Returns -1 if the element isn't prevalent in the list</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>isEmpty() <ul>
+<li>Checks if the list is empty or not<ul>
+<li>Returns true if the list is empty</li>
+<li>Returns false if the list isn't empty</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lastIndexOf(element) <ul>
+<li>Returns the last-placed of the mentioned element<ul>
+<li>Returns -1 if the element isn't prevalent in the list</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>remove(element) <ul>
+<li>Removes first-placed of the mentioned element in the list</li>
+</ul>
+</li>
+<li>remove(int index) <ul>
+<li>Removes an element from the specified index and shifts subsequent elements to the left along with decreasing indexes by 1</li>
+</ul>
+</li>
+<li>set(int index, element) <ul>
+<li>Replaces elements at a given index with the new element</li>
+<li>Returns the newly replaced element as a new element</li>
+</ul>
+</li>
+<li>size() <ul>
+<li>Returns the list's size</li>
+</ul>
+</li>
+<li>sort(Comparator comp) <ul>
+<li>Sorts the elements in the list based on the mentioned comparator</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ArrayList-Example:-Possible-Data-Structure-for-Students-Signed-Up-for-Website">ArrayList Example: Possible Data Structure for Students Signed Up for Website<a class="anchor-link" href="#ArrayList-Example:-Possible-Data-Structure-for-Students-Signed-Up-for-Website"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaExample</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* Creating ArrayList of type &quot;String&quot;*/</span>
+      <span class="c1">//ArrayList&lt;String&gt; obj = new ArrayList&lt;String&gt;();</span>
+
+      <span class="cm">/*adds elements to the ArrayList*/</span>
+      <span class="cm">/*obj.add(&quot;Rebecca&quot;);</span>
+<span class="cm">      obj.add(&quot;Saathvika&quot;);</span>
+<span class="cm">      obj.add(&quot;Sarayu&quot;);</span>
+<span class="cm">      obj.add(&quot;Prisha&quot;);</span>
+<span class="cm">      obj.add(&quot;William&quot;);</span>
+<span class="cm">      obj.add(&quot;Vidhi&quot;);</span>
+<span class="cm">      obj.add(&quot;Shreya&quot;);</span>
+<span class="cm">      obj.add(&quot;Tianbin&quot;);</span>
+
+<span class="cm">      // Displaying elements</span>
+<span class="cm">      System.out.println(&quot;Starting Students Signed Up:&quot;);</span>
+<span class="cm">      for(String str:obj)</span>
+<span class="cm">         System.out.println(str); */</span>
+      
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;the students are added to the arrayList&quot;</span><span class="p">);</span>
+
+      <span class="cm">/* Adds element at the stated index in the list</span>
+<span class="cm">       * obj.add(0, &quot;Rohan&quot;) - Adding element &quot;Rohan&quot; to the first position in the list</span>
+<span class="cm">       * obj.add(1, &quot;Surya&quot;) - Adding element &quot;Surya&quot; to the second position in the list</span>
+<span class="cm">       */</span>
+
+      <span class="cm">/*obj.add(0, &quot;Rohan&quot;);</span>
+<span class="cm">      obj.add(1, &quot;Surya&quot;);</span>
+
+<span class="cm">      // Displaying elements of the new list</span>
+<span class="cm">      System.out.println(&quot;Updated Students List (Additions):&quot;);</span>
+<span class="cm">      for(String str:obj)</span>
+<span class="cm">         System.out.println(str);</span>
+
+<span class="cm">      //Remove elements from the ArrayList</span>
+<span class="cm">      obj.remove(&quot;Sarayu&quot;); //Removes &quot;Sarayu&quot; from the list</span>
+<span class="cm">      obj.remove(&quot;Saathvika&quot;); //Removes &quot;Saathvika&quot; from the list</span>
+
+<span class="cm">      // Displaying elements of the newer list</span>
+<span class="cm">      System.out.println(&quot;Updated Students List (Removals):&quot;);</span>
+<span class="cm">      for(String str:obj)</span>
+<span class="cm">         System.out.println(str);</span>
+
+<span class="cm">      //Remove element from the mentioned index in the list</span>
+<span class="cm">      obj.remove(1); //Removes the second element from the list</span>
+
+<span class="cm">      // Displaying elements of the final most/most newly updated list</span>
+<span class="cm">      System.out.println(&quot;Final Students List:&quot;);</span>
+<span class="cm">      for(String str:obj)</span>
+<span class="cm">         System.out.println(str); */</span>
+   <span class="p">}</span>
+   
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="PranaviInukurti/fastpagescsa"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagescsa/jupyter/2022/10/06/arraylists.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagescsa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpagescsa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
