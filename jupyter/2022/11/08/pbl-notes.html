@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Project Based Learning Notes | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Project Based Learning Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A Jupyter Notebook regarding our PBL &amp; mini-labs along with the key takeaways I got each week throughout this trimester." />
+<meta property="og:description" content="A Jupyter Notebook regarding our PBL &amp; mini-labs along with the key takeaways I got each week throughout this trimester." />
+<link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/08/pbl-notes.html" />
+<meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/08/pbl-notes.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-08T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Project Based Learning Notes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-08T00:00:00-06:00","datePublished":"2022-11-08T00:00:00-06:00","description":"A Jupyter Notebook regarding our PBL &amp; mini-labs along with the key takeaways I got each week throughout this trimester.","headline":"Project Based Learning Notes","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/08/pbl-notes.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/08/pbl-notes.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagescsa/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagescsa/about/">About Me</a><a class="page-link" href="/fastpagescsa/search/">Search</a><a class="page-link" href="/fastpagescsa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Project Based Learning Notes</h1><p class="page-description">A Jupyter Notebook regarding our PBL & mini-labs along with the key takeaways I got each week throughout this trimester.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-08T00:00:00-06:00" itemprop="datePublished">
+        Nov 8, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagescsa/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/PranaviInukurti/fastpagescsa/tree/master/_notebooks/2022-11-08-pbl-notes.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagescsa/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/PranaviInukurti/fastpagescsa/master?filepath=_notebooks%2F2022-11-08-pbl-notes.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/PranaviInukurti/fastpagescsa/blob/master/_notebooks/2022-11-08-pbl-notes.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FPranaviInukurti%2Ffastpagescsa%2Fblob%2Fmaster%2F_notebooks%2F2022-11-08-pbl-notes.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Week-1">Week 1 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-2">Week 2 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-3">Week 3 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-4">Week 4 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-5">Week 5 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-6">Week 6 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-7">Week 7 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-8,-9,-10">Week 8, 9, 10 </a></li>
+<li class="toc-entry toc-h2"><a href="#Week-11">Week 11 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-08-pbl-notes.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Week-1">
+<a class="anchor" href="#Week-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 1<a class="anchor-link" href="#Week-1"> </a>
+</h2>
+<ul>
+<li>I learned how to set up the tools and applications needed for the entirety of this class<ul>
+<li>We will be using GitHub, VSCode, and AWS for deployment</li>
+</ul>
+</li>
+<li>How to work VSCode <ul>
+<li>_notebooks are called Jupyter Notebooks and have the .ipynb file ending<ul>
+<li>These notebooks allow you to use both markdown and coding cells</li>
+</ul>
+</li>
+<li>_posts folder contains all of the markdown files to help with both frontend designing and the basic blogs we will use throughout the trimester<ul>
+<li>These posts allow only markdown cells</li>
+</ul>
+</li>
+<li>_word is used in VSCode to save any documents to your Fastpages in GitHub</li>
+<li>_pages folder includes both markdown files and HTML files</li>
+<li>_images folder contains all of the downloaded images and screenshots that can then be added to your Jupyter notebooks and markdown files <ul>
+<li>Can freely add or remove images from this folder</li>
+</ul>
+</li>
+<li>The index.html file contains the Fastpage's homepage frontend which you can easily customize</li>
+</ul>
+</li>
+</ul>
+<h2 id="Week-2">
+<a class="anchor" href="#Week-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 2<a class="anchor-link" href="#Week-2"> </a>
+</h2>
+<ul>
+<li>Learned all about primitive types during this week<ul>
+<li>notes on this added to the trimester notes</li>
+</ul>
+</li>
+<li>Writing --version in terminal allows you to see which version you installed for most of your installations</li>
+<li>You can do a lot of different commands in your terminal in VSCode that would also work in replacement of your system terminal<ul>
+<li>ls displays the list of files and subdirectories in your chosen directory</li>
+<li>pwd prints the working directory that you are currently in</li>
+<li>ls -al lists all of the contents in the directory including any hidden files you might have</li>
+<li>cd takes you to the home directory</li>
+<li>rm <file> removes a file completely &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+<h2 id="Week-3">
+<a class="anchor" href="#Week-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 3<a class="anchor-link" href="#Week-3"> </a>
+</h2>
+<ul>
+<li>AWS stands for Amazon Web Services<ul>
+<li>We will be using AWS for deployment of our websites later in the trimester</li>
+</ul>
+</li>
+<li>Deployment is essentially the process that allows the website to be displayed in the Internet<ul>
+<li>Can use many different cloud servers, as well as choose specific tools and services<ul>
+<li>EC2 is a cloud computing platform that will serve our website</li>
+<li>GitHub is the platform we are using to share our code on the Internet</li>
+<li>Docker is a platform for developing, shipping, and running applications</li>
+<li>DNS is the Domain Name Service allows us to choose the name for our website</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I learned how to set up the basic tools and services needed for the deployment of our website</li>
+</ul>
+<h2 id="Week-4">
+<a class="anchor" href="#Week-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 4<a class="anchor-link" href="#Week-4"> </a>
+</h2>
+<ul>
+<li>We talked about agile methodology<ul>
+<li>How we can use agile methodology to create a more efficient scrum team when faced with multiple tasks (like all the takss needed to build a website)</li>
+</ul>
+</li>
+<li>We established the following roles for our scrum team<ul>
+<li>The scrum master acts as the leader (me)<ul>
+<li>The manager of tasks and checking the efficiency of the team as a whole</li>
+<li>Helps scrum team members who are in need of help on their specific tasks</li>
+</ul>
+</li>
+<li>DevOps role manages deployment (Madhumita)<ul>
+<li>AWS deployment and managing POM files</li>
+</ul>
+</li>
+<li>Frontend developers manages our frontend (Shraddha)<ul>
+<li>Writes code to edit and customize what user iteracts with on our website</li>
+</ul>
+</li>
+<li>Backend developers work more on actual database and backend code (Meena)</li>
+</ul>
+</li>
+<li>Using team repositories and the GitHub features (scrumboard, issues, etc.) to manage our individual tasks and review tickets as a team</li>
+</ul>
+<h2 id="Week-5">
+<a class="anchor" href="#Week-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 5<a class="anchor-link" href="#Week-5"> </a>
+</h2>
+<ul>
+<li>Started the process of our website for this trimester</li>
+<li>Talked about UML or Unified Modeling Language and how UML diagrams are useful for helping us visualize our website building process and constructing new features to our website</li>
+<li>Coming up with our idea for our website<ul>
+<li>Have to make sure that it actually has a purpose and can be applied to the real world</li>
+<li>Our idea is to have a Del Norte MarketPlace where students from Del Norte can buy and sells items related to school.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Week-6">
+<a class="anchor" href="#Week-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 6<a class="anchor-link" href="#Week-6"> </a>
+</h2>
+<ul>
+<li>This week we got the project approval for our website<ul>
+<li>We showed off our UML diagrams, our Wireframes (prototypes of our website design), and our Brainwrites (brainstorms for our website)</li>
+</ul>
+</li>
+<li>We also spent this week working with APIs and ASCii art<ul>
+<li>API or Application Programming Interface is a way for multiple computer programs to communicate with each other simultaneously<ul>
+<li>RapidAPI is used to connect API's and usually uses the "fetch" to actually use the API off of the Internet<ul>
+<li>can be really useful to quickly and efficiently add more features to our website</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ASCii characters can be used to create art<ul>
+<li>we created a program to convert an image into ASCii art</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Week-7">
+<a class="anchor" href="#Week-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 7<a class="anchor-link" href="#Week-7"> </a>
+</h2>
+<ul>
+<li>We talked in depth are GitHub and Git Sociology<ul>
+<li>GitHub and Git are social computing tools</li>
+<li>We have and will be using both GitHub and Git often in this class</li>
+</ul>
+</li>
+<li>GitHub is essentially a cloud-based Git repository and a hosting service<ul>
+<li>GitHub has many tools and features that can be used to manage the software</li>
+</ul>
+</li>
+<li>Git is within GitHub and manages files &amp; versions <ul>
+<li>Git allows programmers to share code and work together on projects</li>
+</ul>
+</li>
+<li>We also talked about talked about ArrayLists and the differences between Arrays and ArrayLists</li>
+</ul>
+<h2 id="Week-8,-9,-10">
+<a class="anchor" href="#Week-8,-9,-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 8, 9, 10<a class="anchor-link" href="#Week-8,-9,-10"> </a>
+</h2>
+<ul>
+<li>These three weeks were spent learning the main topics that CollegeBoard focuses on for this course<ul>
+<li>Our lessons were student led and included homework and hacks to keep us engaged everyday</li>
+</ul>
+</li>
+<li>We learned about writing classes, using objects, primitive types, iteration, boolean expressions, and arrays<ul>
+<li>Notes on these topics were added to the trimester notes</li>
+<li>The homework from each of these lessons were accomplished together with my scrum team in order to collaborate and help each other with concepts that we were confused about<ul>
+<li>This work is in separate Jupyter Notebooks labeled by unit number</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Week-11">
+<a class="anchor" href="#Week-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Week 11<a class="anchor-link" href="#Week-11"> </a>
+</h2>
+<ul>
+<li>This week was spent code, code, codeing<ul>
+<li>We were really focusing on our website and trying to get it up and ready for Night at the Museum<ul>
+<li>Me and Shraddha worked on frontend code together and working to make our website look as close as possible to our wireframes despite being hosted on GitHub Fastpages</li>
+<li>Meena and Madhumita worked together on backend code and set up our database for our listings </li>
+<li>We all worked together to connect our separate frontend and backend code that was created on different repositories</li>
+</ul>
+</li>
+<li>We also had to worry about managing our tasks diligently, maintaining a good mindset despite our frustrations, and getting our website deployed for N@TM </li>
+</ul>
+</li>
+<li>At N@TM, we were able to enjoy the fruits of our labor<ul>
+<li>We demoed our website to parents and students who were passing by</li>
+<li>We took pictures and made memories with our website along with our classmates' websites</li>
+<li>We explored other classes trimester work after our shift ended</li>
+</ul>
+</li>
+</ul>
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+</file>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="PranaviInukurti/fastpagescsa"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagescsa/jupyter/2022/11/08/pbl-notes.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagescsa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpagescsa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
