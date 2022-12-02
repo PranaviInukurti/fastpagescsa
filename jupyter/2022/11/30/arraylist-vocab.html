@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Week of 11-28, ArrayList and Vocab | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Week of 11-28, ArrayList and Vocab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/30/arraylist-vocab.html" />
+<meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/30/arraylist-vocab.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-30T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Week of 11-28, ArrayList and Vocab" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-30T00:00:00-06:00","datePublished":"2022-11-30T00:00:00-06:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Week of 11-28, ArrayList and Vocab","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/30/arraylist-vocab.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2022/11/30/arraylist-vocab.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagescsa/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagescsa/about/">About Me</a><a class="page-link" href="/fastpagescsa/search/">Search</a><a class="page-link" href="/fastpagescsa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Week of 11-28, ArrayList and Vocab</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-30T00:00:00-06:00" itemprop="datePublished">
+        Nov 30, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagescsa/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/PranaviInukurti/fastpagescsa/tree/master/_notebooks/2022-11-30-arraylist-vocab.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagescsa/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/PranaviInukurti/fastpagescsa/master?filepath=_notebooks%2F2022-11-30-arraylist-vocab.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/PranaviInukurti/fastpagescsa/blob/master/_notebooks/2022-11-30-arraylist-vocab.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FPranaviInukurti%2Ffastpagescsa%2Fblob%2Fmaster%2F_notebooks%2F2022-11-30-arraylist-vocab.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Trimester-1-Notes">Trimester 1 Notes </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Casting-Notes">Casting Notes </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Widening-Casting">Widening Casting </a></li>
+<li class="toc-entry toc-h5"><a href="#Narrowing-Casting">Narrowing Casting </a></li>
+<li class="toc-entry toc-h5"><a href="#Casting-with-Division">Casting with Division </a></li>
+<li class="toc-entry toc-h5"><a href="#Casting-with-Truncating">Casting with Truncating </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Wrapper-Classes">Wrapper Classes </a></li>
+<li class="toc-entry toc-h3"><a href="#Concatenation">Concatenation </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Concatenation-Using-+-Operator">Concatenation Using + Operator </a></li>
+<li class="toc-entry toc-h5"><a href="#Concatenation-Using-Concat-Method">Concatenation Using Concat Method </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Java-Math-Class.random">Java Math Class.random </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Ranged-Results">Ranged Results </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Compound-Boolean-Expressions">Compound Boolean Expressions </a></li>
+<li class="toc-entry toc-h3"><a href="#Truth-Tables">Truth Tables </a></li>
+<li class="toc-entry toc-h3"><a href="#De-Morgan's-Law">De Morgan&#39;s Law </a></li>
+<li class="toc-entry toc-h3"><a href="#Comparing-in-Java">Comparing in Java </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Comparing-Numbers">Comparing Numbers </a></li>
+<li class="toc-entry toc-h5"><a href="#Comparing-Strings">Comparing Strings </a></li>
+<li class="toc-entry toc-h5"><a href="#Comparing-Objects">Comparing Objects </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#For,-Enhanced-For,-While,-and-Nested-Loops">For, Enhanced For, While, and Nested Loops </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#For-Loops">For Loops </a></li>
+<li class="toc-entry toc-h5"><a href="#While-Loops">While Loops </a></li>
+<li class="toc-entry toc-h5"><a href="#Do-While-Loops">Do While Loops </a></li>
+<li class="toc-entry toc-h5"><a href="#Enhanced-For-Loops">Enhanced For Loops </a></li>
+<li class="toc-entry toc-h5"><a href="#Nested-Loops">Nested Loops </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Creating-a-Class">Creating a Class </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Naming-Conventions">Naming Conventions </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Constructors">Constructors </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#No-Returns">No Returns </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-30-arraylist-vocab.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Trimester-1-Notes">
+<a class="anchor" href="#Trimester-1-Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trimester 1 Notes<a class="anchor-link" href="#Trimester-1-Notes"> </a>
+</h2>
+<h3 id="Casting-Notes">
+<a class="anchor" href="#Casting-Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Casting Notes<a class="anchor-link" href="#Casting-Notes"> </a>
+</h3>
+<ul>
+<li>Casting is when programmers are trying to assign a value from one data type to another data type<ul>
+<li>Widening Casting is when smaller data types convert to bigger data types<ul>
+<li>Happens automatically</li>
+</ul>
+</li>
+<li>Narrowing Casting is when larger data types convert to smaller data types<ul>
+<li>Happens manually</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The chain of smallest to biggest data types is <ul>
+<li>byte, short, char, int, long, float, double</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Widening-Casting">
+<a class="anchor" href="#Widening-Casting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Widening Casting<a class="anchor-link" href="#Widening-Casting"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">myInt</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+      <span class="kt">double</span> <span class="n">myDouble</span> <span class="o">=</span> <span class="n">myInt</span><span class="p">;</span> <span class="c1">// Automatic casting: int to double</span>
+  
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInt</span><span class="p">);</span>      <span class="c1">// Outputs 9</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myDouble</span><span class="p">);</span>   <span class="c1">// Outputs 9.0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9
+9.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Narrowing-Casting">
+<a class="anchor" href="#Narrowing-Casting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Narrowing Casting<a class="anchor-link" href="#Narrowing-Casting"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">myDouble</span> <span class="o">=</span> <span class="mf">9.78d</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">myInt</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">myDouble</span><span class="p">;</span> <span class="c1">// Manual casting: double to int</span>
+  
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myDouble</span><span class="p">);</span>   <span class="c1">// Outputs 9.78</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInt</span><span class="p">);</span>      <span class="c1">// Outputs 9</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9.78
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Casting-with-Division">
+<a class="anchor" href="#Casting-with-Division" aria-hidden="true"><span class="octicon octicon-link"></span></a>Casting with Division<a class="anchor-link" href="#Casting-with-Division"> </a>
+</h5>
+<ul>
+<li>Java typically assumes that an integer result is appropriate when doing division with integers<ul>
+<li>However, using a mixture of integers (int) and floating point numbers (double), Java assumes that a double result is appropriate<ul>
+<li>To do this though, one must use casting<ul>
+<li>Cast one of the integers to a double using (double), changing the “shape” or the data type of the variable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+    <span class="c1">// automatic casting here</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">);</span>
+     <span class="c1">// manual casting here</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">float</span><span class="p">)</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Test</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+0.3333333333333333
+0.3333333333333333
+0.33333334
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Casting-with-Truncating">
+<a class="anchor" href="#Casting-with-Truncating" aria-hidden="true"><span class="octicon octicon-link"></span></a>Casting with Truncating<a class="anchor-link" href="#Casting-with-Truncating"> </a>
+</h5>
+<ul>
+<li>Truncating a number essentially means to round it<ul>
+<li>In division, using truncating would mean to remove the amount of decimal or fractional numbers to create an intended result</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>   
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrunctionExample1</span>  
+<span class="p">{</span>   
+<span class="c1">//driver code  </span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span>   
+<span class="p">{</span>   
+<span class="c1">//the number to truncate      </span>
+<span class="kt">double</span> <span class="n">num</span> <span class="o">=</span> <span class="mf">19.87874548973101</span><span class="p">;</span>   
+<span class="c1">//number of digits to take after decimal  </span>
+<span class="kt">int</span> <span class="n">digits</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>   
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The number before truncation is: "</span><span class="o">+</span><span class="n">num</span><span class="p">);</span>   
+<span class="c1">//calling user-defined method that truncates a number  </span>
+<span class="n">truncateNumber</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">digits</span><span class="p">);</span>   
+<span class="p">}</span>  
+<span class="c1">//user-defined method to truncate a number      </span>
+<span class="kd">static</span> <span class="kt">void</span> <span class="nf">truncateNumber</span><span class="p">(</span><span class="kt">double</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">decimalplace</span><span class="p">)</span>   
+<span class="p">{</span>   
+<span class="c1">//moves the decimal to the right   </span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">decimalplace</span><span class="p">);</span>   
+<span class="c1">//determines the floor value  </span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>   
+<span class="c1">//dividing the floor value by 10 to the power decimalplace  </span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">decimalplace</span><span class="p">);</span>   
+<span class="c1">//prints the number after truncation  </span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The number after truncation is: "</span><span class="o">+</span><span class="n">n</span><span class="p">);</span>   
+<span class="p">}</span>   
+<span class="p">}</span>  
+<span class="n">TrunctionExample1</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The number before truncation is: 19.87874548973101
+The number after truncation is: 19.87874
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Wrapper-Classes">
+<a class="anchor" href="#Wrapper-Classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wrapper Classes<a class="anchor-link" href="#Wrapper-Classes"> </a>
+</h3>
+<ul>
+<li>Is essentially the practice of using primitive data types as objects</li>
+<li>You can use certain methods to get information about the specific object
+  Methods like the following are used to get the value associated with the respective wrapper object
+<pre><code>  intValue(), byteValue(), shortValue(), longValue(), floatValue(), doubleValue(), charValue(), booleanValue()</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Integer</span> <span class="n">myInt</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+      <span class="n">Double</span> <span class="n">myDouble</span> <span class="o">=</span> <span class="mf">5.99</span><span class="p">;</span>
+      <span class="n">Character</span> <span class="n">myChar</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInt</span><span class="p">.</span><span class="na">intValue</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myDouble</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myChar</span><span class="p">.</span><span class="na">charValue</span><span class="p">());</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+5.99
+A
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The  <code>to String()</code> method can be used when converting wrapper object to strings<ul>
+<li>The  <code>length()</code> outputs the length of the "string" when converting an int to a string</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Integer</span> <span class="n">myInt</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+      <span class="n">String</span> <span class="n">myString</span> <span class="o">=</span> <span class="n">myInt</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myString</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Concatenation">
+<a class="anchor" href="#Concatenation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Concatenation<a class="anchor-link" href="#Concatenation"> </a>
+</h3>
+<ul>
+<li>Combining two or more strings to form a new string<ul>
+<li>Happens by appending the next string to the end of the previous strings</li>
+<li>In Java, two strings can be concatenated by using the + or += operator, or the <code>concat()</code> method in the java.lang.String class</li>
+</ul>
+</li>
+<li>Example<ul>
+<li>H E L L O  +   W O R L D becomes</li>
+<li>H E L L O W O R L D</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Concatenation-Using-+-Operator">
+<a class="anchor" href="#Concatenation-Using-+-Operator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Concatenation Using + Operator<a class="anchor-link" href="#Concatenation-Using-+-Operator"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> 
+        <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">"World"</span><span class="p">;</span>
+
+        <span class="c1">// way 1</span>
+        <span class="n">String</span> <span class="n">third</span> <span class="o">=</span> <span class="n">first</span> <span class="o">+</span> <span class="n">second</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">third</span><span class="p">);</span>
+
+        <span class="c1">// way 2</span>
+        <span class="n">first</span> <span class="o">+=</span> <span class="n">second</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">first</span><span class="p">);</span>        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">HelloWorld</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HelloWorld
+HelloWorld
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Concatenation-Using-Concat-Method">
+<a class="anchor" href="#Concatenation-Using-Concat-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Concatenation Using Concat Method<a class="anchor-link" href="#Concatenation-Using-Concat-Method"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> 
+        <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">"World"</span><span class="p">;</span>
+
+        <span class="n">String</span> <span class="n">third</span> <span class="o">=</span> <span class="n">first</span><span class="p">.</span><span class="na">concat</span><span class="p">(</span><span class="n">second</span><span class="p">);</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">third</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">HelloWorld</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HelloWorld
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Java-Math-Class.random">
+<a class="anchor" href="#Java-Math-Class.random" aria-hidden="true"><span class="octicon octicon-link"></span></a>Java Math Class.random<a class="anchor-link" href="#Java-Math-Class.random"> </a>
+</h3>
+<ul>
+<li>The java.lang.Math.random() is used to return a pseudorandom double type number that is &gt;= 0.0 and &lt; 1.0<ul>
+<li>Random number always between 0 and 1</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathClass</span>  
+<span class="p">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>   
+    <span class="p">{</span>  
+        <span class="c1">// generate random number  </span>
+        <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>  
+        <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>  
+        <span class="c1">// Output is different every time this code is executed    </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>  
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="n">MathClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.22257006893484987
+0.6831401769648252
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Ranged-Results">
+<a class="anchor" href="#Ranged-Results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ranged Results<a class="anchor-link" href="#Ranged-Results"> </a>
+</h5>
+<ul>
+<li>For specific range of values, you have to multiply the returned value with the magnitude of the range<ul>
+<li>To get the random number between 0 to 20, the resultant address has to be multiplied by 20 to get the desired result</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RangedResult</span>  
+<span class="p">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>   
+    <span class="p">{</span>  
+        <span class="c1">// Generate random number between 0 to 20  </span>
+        <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">;</span>  
+        <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">;</span>  
+        <span class="c1">// Output is different every time this code is executed    </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>  
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="n">RangedResult</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5.542133912557907
+4.062478517038832
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Compound-Boolean-Expressions">
+<a class="anchor" href="#Compound-Boolean-Expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compound Boolean Expressions<a class="anchor-link" href="#Compound-Boolean-Expressions"> </a>
+</h3>
+<ul>
+<li>Three compound boolean logical operators<ul>
+<li>Operand1 must be a boolean variable and op may be &amp;, |, or ^</li>
+<li>Java does not have any operators like &amp;&amp;= and ||=</li>
+</ul>
+</li>
+<li>Compound Boolean Logical Assignment Operators are used in the form <code>operand1 op= operand2</code> which essentially means <code>operand1 = operand1 op operand2</code>
+</li>
+<li>For &amp;= operator, if both operands evaluate to true, &amp;= returns true. Otherwise, it returns false.
+<pre><code>boolean b = true;
+b &amp;= true;  // Assigns true to b
+b &amp;= false; // Assigns false to b</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Permission</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="kt">boolean</span> <span class="n">cleanedRoom</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="kt">boolean</span> <span class="n">didHomework</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">cleanedRoom</span> <span class="o">&amp;&amp;</span> <span class="n">didHomework</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"You can go out"</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No, you can't go out"</span><span class="p">);</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Permission</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No, you can't go out
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Truth-Tables">
+<a class="anchor" href="#Truth-Tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truth Tables<a class="anchor-link" href="#Truth-Tables"> </a>
+</h3>
+<ul>
+<li>Shows result for P &amp;&amp; Q when P and Q are both boolean expressions (can be true or false)<ul>
+<li>An expression involving logical operators like (P &amp;&amp; Q) evaluates to a Boolean value, true or false </li>
+<li>P &amp;&amp; Q is only true if both P and Q are true.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/fastpagescsa/images/copied_from_nb/../images/truthtable2.png" alt="Truth Table with &amp;&amp;"></p>
+<ul>
+<li>Shows the result for P || Q when P and Q are both boolean expressions<ul>
+<li>P || Q is true if either P or Q is true<ul>
+<li>Also true when both of them are true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/fastpagescsa/images/copied_from_nb/../images/truthtable1.png" alt="Truth Table with ||"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="De-Morgan's-Law">
+<a class="anchor" href="#De-Morgan's-Law" aria-hidden="true"><span class="octicon octicon-link"></span></a>De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a>
+</h3>
+<ul>
+<li>This law came after the man named Augustus De Morgan who developed it in the 1800s. The law states how to determine what the code will execute when negation rules are applied. For example, if a and b are both boolean values, then:</li>
+<li>!(a &amp;&amp; b) is equivalent to !a || !b</li>
+<li>!(a || b) is equivalent to !a &amp;&amp; !b</li>
+</ul>
+<p>The following negation conditions will also apply under De Morgan's law:</p>
+<ul>
+<li>&lt; becomes &gt;=</li>
+<li>"&gt;" becomes &lt;=</li>
+<li>== becomes !=</li>
+<li>&lt;= becomes &gt;</li>
+<li>= becomes &lt;</li>
+<li>!= becomes ==</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">state</span> <span class="o">=</span> <span class="s">"HI"</span><span class="p">;</span>
+
+<span class="c1">// !(a || b) is equivalent to !a &amp;&amp; !b</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"TX"</span><span class="p">)</span> <span class="o">||</span> <span class="n">state</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"HI"</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The state is not Texas or Hawaii"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The state is either Texas or Hawaii"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// !(a &amp;&amp; b) is equivalent to !a || !b</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"TX"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">state</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"HI"</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The state is either Texas or Hawaii"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The state is not Texas or Hawaii"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The state is either Texas or Hawaii
+The state is either Texas or Hawaii
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comparing-in-Java">
+<a class="anchor" href="#Comparing-in-Java" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing in Java<a class="anchor-link" href="#Comparing-in-Java"> </a>
+</h3>
+<h5 id="Comparing-Numbers">
+<a class="anchor" href="#Comparing-Numbers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing Numbers<a class="anchor-link" href="#Comparing-Numbers"> </a>
+</h5>
+<ul>
+<li>To check two numbers for equality in Java, we can use the <code>Equals()</code> method as well as the == operator<ul>
+<li>First, you must set the Integers
+<pre><code>Integer val1 = new Integer(5);
+Integer val2 = new Integer(5);</code></pre>
+</li>
+</ul>
+</li>
+<li>Next check their equality using the == operator
+<pre><code>(val1 == val2)</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompareNum</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span> <span class="p">)</span> <span class="p">{</span>
+       <span class="n">Integer</span> <span class="n">val1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+       <span class="n">Integer</span> <span class="n">val2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+       <span class="n">Integer</span> <span class="n">val3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Integer 1 = "</span><span class="o">+</span><span class="n">val1</span><span class="p">);</span>
+       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Integer 2 = "</span><span class="o">+</span><span class="n">val2</span><span class="p">);</span>
+       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Integer 3 = "</span><span class="o">+</span><span class="n">val3</span><span class="p">);</span>
+       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"val1 is equal to val2 = "</span><span class="o">+</span><span class="p">(</span><span class="n">val1</span> <span class="o">==</span> <span class="n">val2</span><span class="p">));</span>
+       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"val2 is not equal to val3 = "</span><span class="o">+</span><span class="p">(</span><span class="n">val2</span> <span class="o">!=</span> <span class="n">val3</span><span class="p">));</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+<span class="n">CompareNum</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Integer 1 = 5
+Integer 2 = 5
+Integer 3 = 10
+val1 is equal to val2 = false
+val2 is not equal to val3 = true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Comparing-Strings">
+<a class="anchor" href="#Comparing-Strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing Strings<a class="anchor-link" href="#Comparing-Strings"> </a>
+</h5>
+<ul>
+<li>There are five different ways to compare strings in Java<ul>
+<li>Using user-defined function</li>
+<li>Using <code>String.equals()</code>
+</li>
+<li>Using <code>String.equalsIgnoreCase()</code>
+</li>
+<li>Using <code>Objects.equals()</code>
+</li>
+<li>Using <code>String.compareTo()</code>
+</li>
+</ul>
+</li>
+<li>In general both equals() and == operator both are used to compare objects to check equality<ul>
+<li>There are some differences between the two<ul>
+<li>one is method and other is operator</li>
+<li>== operators is for reference comparison and .equals() method is for content comparison</li>
+</ul>
+</li>
+<li>Essentially, == checks if both objects point to the same memory location whereas .equals() actually compares the values of two objects</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Comparing-Objects">
+<a class="anchor" href="#Comparing-Objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing Objects<a class="anchor-link" href="#Comparing-Objects"> </a>
+</h5>
+<ul>
+<li>You can compare objects in Java by using the == and != operators, which tells if two Java objects are the same or not<ul>
+<li>This also works when comparing a primitive value with its wrapper type counterpart
+<pre><code>Integer a = new Integer(1);
+assertThat(1 == a).isTrue();</code></pre>
+</li>
+</ul>
+</li>
+<li>The equals method can also be used to compare objects<ul>
+<li>The methods returns true if both objects are the same and false if the two objects are different</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="For,-Enhanced-For,-While,-and-Nested-Loops">
+<a class="anchor" href="#For,-Enhanced-For,-While,-and-Nested-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>For, Enhanced For, While, and Nested Loops<a class="anchor-link" href="#For,-Enhanced-For,-While,-and-Nested-Loops"> </a>
+</h3>
+<h5 id="For-Loops">
+<a class="anchor" href="#For-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>For Loops<a class="anchor-link" href="#For-Loops"> </a>
+</h5>
+<ul>
+<li>simplifies code by allowing it to repeat itself</li>
+<li>while loops have two portions: the boolean expression and the brackets that have some code in them<ul>
+<li>the boolean expression is checked before the loop starts<ul>
+<li>every time the loop ends and is about to start anew</li>
+</ul>
+</li>
+<li>changes conditions again and again until returns false and ends the while loop</li>
+<li>iterates over numerous elements</li>
+</ul>
+</li>
+<li>for loops has three portions: initialization, test condition, and change
+<pre><code>for (int x = 1; x &lt;= 5; x++) {
+  System.out.println(x);
+}</code></pre>
+</li>
+<li>when the loop condition is false, execution will continue at the next statement after the body of the loop.</li>
+<li>strings can also be manipulated through the use of iteration
+```
+String name = "CodeCodeCode";</li>
+</ul>
+<p>for (int i = 0; i &lt; name.length(); i+=2) {
+    System.out.println(name.substring(i,i+2));
+}
+```</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="While-Loops">
+<a class="anchor" href="#While-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>While Loops<a class="anchor-link" href="#While-Loops"> </a>
+</h5>
+<ul>
+<li>The while loop loops through a block of code as long as a specified condition is true
+<pre><code>int i = 0;
+while (i &lt; 5) {
+System.out.println(i);
+i++;
+}</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Do-While-Loops">
+<a class="anchor" href="#Do-While-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do While Loops<a class="anchor-link" href="#Do-While-Loops"> </a>
+</h5>
+<ul>
+<li>A variant of the while loop<ul>
+<li>Executes the code block once, before checking if the condition is true, then it repeats the loop as long as the condition is true
+<pre><code>int i = 0;
+do {
+System.out.println(i);
+i++;
+}
+while (i &lt; 5);</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Enhanced-For-Loops">
+<a class="anchor" href="#Enhanced-For-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enhanced For Loops<a class="anchor-link" href="#Enhanced-For-Loops"> </a>
+</h5>
+<ul>
+<li>there are also nested while loops<ul>
+<li>aren't very practical though </li>
+</ul>
+</li>
+<li>for each loops are similar to for loops <ul>
+<li>three portions to it<ul>
+<li>array, item, dataType</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ForEachLoops</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="c1">// create an array</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">};</span>
+    
+            <span class="c1">// for each loop </span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">ForEachLoops</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+10
+5
+12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Nested-Loops">
+<a class="anchor" href="#Nested-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested Loops<a class="anchor-link" href="#Nested-Loops"> </a>
+</h5>
+<ul>
+<li>nested iteration is where there is a loop within a loop<ul>
+<li>similar to nested conditionals
+<pre><code>for (int row = 0; row &lt; 5; row ++) {
+for (int column = 0; column &lt; 4; column++) {
+  System.out.print('*');
+}
+System.out.println();
+}</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-a-Class">
+<a class="anchor" href="#Creating-a-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Class<a class="anchor-link" href="#Creating-a-Class"> </a>
+</h3>
+<ul>
+<li>There are a couple of steps to writing a class<ul>
+<li>make sure to use the class keyword to create a class in the start</li>
+<li>To create an object of Main, specify the class name, followed by the object name, and use the keyword new<ul>
+<li>Constructors are used to create new objects</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Instance variables are used to store any information regarding objects created in a class</li>
+<li>Methods are used to show programs a new command they must run<ul>
+<li>specific methods are used to perform specific tasks in a class</li>
+</ul>
+</li>
+</ul>
+<h5 id="Naming-Conventions">
+<a class="anchor" href="#Naming-Conventions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naming Conventions<a class="anchor-link" href="#Naming-Conventions"> </a>
+</h5>
+<ul>
+<li>For variables, the Java naming convention is to always start with a lowercase letter and then capitalize the first letter of every subsequent word<ul>
+<li>Variables can't contain white space, so variables made from compound words are to be written with a lower camel case syntax<ul>
+<li>firstName</li>
+<li>timeToFirstLoad</li>
+<li>index</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/fastpagescsa/images/copied_from_nb/../images/naming.png" alt="Naming Conventions in Java"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructors">
+<a class="anchor" href="#Constructors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructors<a class="anchor-link" href="#Constructors"> </a>
+</h3>
+<ul>
+<li>A constructor in Java is a special method that is used to initialize objects<ul>
+<li>Called when an object of a class is created</li>
+<li>Used to set initial values for object attributes</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>  <span class="c1">// Create a class attribute</span>
+  
+    <span class="c1">// Create a class constructor for the Main class</span>
+    <span class="kd">public</span> <span class="nf">Main</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// Set the initial value for the class attribute x</span>
+    <span class="p">}</span>
+  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Main</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Main</span><span class="p">();</span> <span class="c1">// Create an object of class Main (This will call the constructor)</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myObj</span><span class="p">.</span><span class="na">x</span><span class="p">);</span> <span class="c1">// Print the value of x</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="No-Returns">
+<a class="anchor" href="#No-Returns" aria-hidden="true"><span class="octicon octicon-link"></span></a>No Returns<a class="anchor-link" href="#No-Returns"> </a>
+</h5>
+<ul>
+<li>What actually happens with the constructor is that the runtime uses type data generated by the compiler to determine how much space is needed to store an object instance in memory</li>
+<li>Includes all members variables and after the space is designated, the constructor is called as an internal part of the instantiation and initialization process</li>
+<li>The constructor exits, the runtime returns the newly-created instance<ul>
+<li>Can't return a value because it's not called directly by your code, it's called by the memory allocation and object initialization code in the runtime</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="PranaviInukurti/fastpagescsa"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagescsa/jupyter/2022/11/30/arraylist-vocab.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagescsa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpagescsa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
