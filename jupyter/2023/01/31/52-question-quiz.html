@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      12 min read
     
 </span></p>
 
@@ -134,7 +134,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q1-2D-array-bounds-error">Q1 2D array bounds error<a class="anchor-link" href="#Q1-2D-array-bounds-error"> </a></h2><p>Topic 8.1, 8.2
+<h3 id="Q1-2D-array-bounds-error">Q1 2D array bounds error<a class="anchor-link" href="#Q1-2D-array-bounds-error"> </a></h3><p>Topic 8.1, 8.2
 Consider the following code segment.
 int[][] anArray = new int[10][8];
 for (int j = 0; j &lt; 8; j++)
@@ -146,12 +146,12 @@ anArray[j][k] = 5;
 }
 <strong>The code segment causes an ArrayIndexOutOfBoundsException to be thrown. How many elements in anArray will be set to 5 before the exception is thrown?</strong>
 We answered 64 but this would not thrown an ArrayIndexOutOfBoundsException. Instead, 8 elements in anArray will be set to 5 before an exception is thrown since anArray has 8 columns, numbered 0 through 7, inclusive.</p>
-<h2 id="Q3-2D-array-with-multi-way-selection">Q3 2D array with multi-way selection<a class="anchor-link" href="#Q3-2D-array-with-multi-way-selection"> </a></h2><p>2.B
+<h3 id="Q3-2D-array-with-multi-way-selection">Q3 2D array with multi-way selection<a class="anchor-link" href="#Q3-2D-array-with-multi-way-selection"> </a></h3><p>2.B
 Topic 8.2 (Traversing 2D Arrays)
 Consider the following code segment.
 <strong>What are the contents of mat after the code segment has been executed?</strong>
 The correct answer would be D since the array created is 3 rows and 4 columns, not the other way around.</p>
-<h2 id="Q7-combine-method">Q7 combine method<a class="anchor-link" href="#Q7-combine-method"> </a></h2><p>2.C
+<h3 id="Q7-combine-method">Q7 combine method<a class="anchor-link" href="#Q7-combine-method"> </a></h3><p>2.C
 Topic 2.7, 4.3
 Consider the following method.
 /<strong> Precondition: Strings one and two have the same length. */
@@ -172,7 +172,7 @@ res += "0";
 return res;
 }</strong>What is returned as a result of the call combine("10110", "01100") ?**
 00101 is incorrect since this would be the result if the method call was combine("10111", "01101"). Instead, the right answer is 00100 since the combine method compares corresponding substrings of length 1 from input strings one and two. If the substrings are the same, the substring is appended to res or else "0" is appended to res.</p>
-<h2 id="Q9-compSci-substring">Q9 compSci substring<a class="anchor-link" href="#Q9-compSci-substring"> </a></h2><p>2.C
+<h3 id="Q9-compSci-substring">Q9 compSci substring<a class="anchor-link" href="#Q9-compSci-substring"> </a></h3><p>2.C
 Topic 2.7
 Consider the following code segment.
 String str = "CompSci";
@@ -182,6 +182,28 @@ int num = str.length();
 str.length would give you the length of the string str, not the substring printed out so value of num is 7 not 3. (edited) 
 10:46
 (here is my test corrections)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Q10-concat-0s-and-8s">Q10 concat 0s and 8s<a class="anchor-link" href="#Q10-concat-0s-and-8s"> </a></h3><p>Consider the following code segment.</p>
+<p>String str = "0";
+str += str + 0 + 8;
+System.out.println(str);
+We answered that nothing is printed because you can't add ints to strings. However, the ints are interpreted as strings, so "0008" would be printed.</p>
+<h3 id="Q11-concat-one-two-zee">Q11 concat one two zee<a class="anchor-link" href="#Q11-concat-one-two-zee"> </a></h3><p>Consider the following code segment.</p>
+<p>int one = 1;
+int two = 2;
+String zee = "Z";
+System.out.println(one + two + zee);
+What is printed as a result of executing the code segment?</p>
+<p>We answered "12Z" because we thought the integers would be concatenated together much like strings are. However, the ints are actually added together, so the correct answer is "3Z"</p>
+<h3 id="Q12">Q12<a class="anchor-link" href="#Q12"> </a></h3><p>Create ArrayList of students, and add "Alex", "Bob", and "Carl" to them. Then, iterate over the array and set each value to alex. The print each value in the array.</p>
+<p>We answered that nothing is printed because the first print statement will cause a runtime exception. However, in the first iteration, the set method will return the value that was originally at the index. During the first print statement, "Alex Bob Carl" will be printed. During the second print statement "Alex Alex Alex" will be printed.</p>
+<h3 id="Q13-containsArt-method-with-3-String-parameters">Q13 containsArt method with 3 String parameters<a class="anchor-link" href="#Q13-containsArt-method-with-3-String-parameters"> </a></h3><p>Consider method which woould return true if at least one of the strings contains the substring art. Which would not work as intended.</p>
+<p>We answered "darkroom, cartoon, articulate" because it doesn't end with art, meaning that the method will not pick it up. However, "art" doesn't have to be at the end of the string for it to be picked up. "rattrapsimilartoday" won't work because after concatenated, the program will detect an "art" between similar and today, even though none of the words actually contain "art"</p>
 
 </div>
 </div>
