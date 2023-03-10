@@ -188,6 +188,81 @@ Additon is : 10
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tech-Talk-Notes">Tech Talk Notes<a class="anchor-link" href="#Tech-Talk-Notes"> </a></h3><p>Notes from Tuesday (3/7) Tech Talk on Data Types.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Primitive-vs-Reference-Data-Types">Primitive vs Reference Data Types<a class="anchor-link" href="#Primitive-vs-Reference-Data-Types"> </a></h4><p>Two data types in java</p>
+<ul>
+<li>primitive (int, long, boolean, double, char, byte, short, float)</li>
+<li>reference (object, arrays)</li>
+</ul>
+<p>Primitive are stored directly in memory (local) whereas reference are stored as a reference to the memory location (local reference).</p>
+<h4 id="Wrapper-Classes">Wrapper Classes<a class="anchor-link" href="#Wrapper-Classes"> </a></h4><p>Class that wraps the primitive type. We can use primitive types in collections (i.g. arraylists). Helps to convert int.s to objects and objects to int.s. Doesn't behave like a class though.</p>
+<h5 id="Autoboxing">Autoboxing<a class="anchor-link" href="#Autoboxing"> </a></h5><ul>
+<li>Putting a box around int so it can be used in collections</li>
+<li>similar to syntax for Int</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// Both of these create new objects</span>
+<span class="n">Integer</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// Auto-boxing, Integer n = new Integer(5);</span>
+<span class="n">n</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// Auto-boxing, Integer n = new Integer(n + 5);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>String isn't a primitive (only 1 value is a primitive) but it is a class (it is a group of values together).</p>
+<p>Complex Data Structure</p>
+<ul>
+<li>objects and arrays<ul>
+<li>can include user (metadata, etc.)</li>
+</ul>
+</li>
+<li>wrapper class retains teh things of a regular class<ul>
+<li>passes by value</li>
+</ul>
+</li>
+<li>class AtomicInteger passes by reference<ul>
+<li>hash code is on every object (built in Java)<ul>
+<li>unique signature (identification for the object)</li>
+<li>point to memory location sometimes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>swap IntbyReference<ul>
+<li>made a class, added private attribute/property with a primitive, try to use it by reference</li>
+<li>made a method to swap from low to high order</li>
+<li>had some values <h2 id="----method-does-a-swapping-routine-(uses-a-temp-location-to-easily-swap-using-a-triangle-swapping-method)">  - method does a swapping routine (uses a temp location to easily swap using a triangle swapping method)<a class="anchor-link" href="#----method-does-a-swapping-routine-(uses-a-temp-location-to-easily-swap-using-a-triangle-swapping-method)"> </a></h2></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 
