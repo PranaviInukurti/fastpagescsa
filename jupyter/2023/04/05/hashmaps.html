@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Sort, Space and Time Complexity | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Sort, Space and Time Complexity" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/05/hashmaps.html" />
+<meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/05/hashmaps.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sort, Space and Time Complexity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-05T00:00:00-05:00","datePublished":"2023-04-05T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Sort, Space and Time Complexity","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/05/hashmaps.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/05/hashmaps.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagescsa/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagescsa/about/">About Me</a><a class="page-link" href="/fastpagescsa/search/">Search</a><a class="page-link" href="/fastpagescsa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sort, Space and Time Complexity</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-05T00:00:00-05:00" itemprop="datePublished">
+        Apr 5, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagescsa/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/PranaviInukurti/fastpagescsa/tree/master/_notebooks/2023-04-05-hashmaps.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagescsa/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/PranaviInukurti/fastpagescsa/master?filepath=_notebooks%2F2023-04-05-hashmaps.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/PranaviInukurti/fastpagescsa/blob/master/_notebooks/2023-04-05-hashmaps.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FPranaviInukurti%2Ffastpagescsa%2Fblob%2Fmaster%2F_notebooks%2F2023-04-05-hashmaps.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-05-hashmaps.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-Hacks">Checkpoint Hacks<a class="anchor-link" href="#Checkpoint-Hacks"> </a></h2><ul>
+<li>Build Sort into Data Structure</li>
+<li>Perform BigO analysis and evaluation of best sorts from CB, use Sorts from others to compare to yours.   </li>
+<li>Support Analysis with runtime data, also analyze number of compares and swaps.  Consider space complexity.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hashmaps-and-Big-O-Hack-1">Hashmaps and Big O Hack 1<a class="anchor-link" href="#Hashmaps-and-Big-O-Hack-1"> </a></h2><ul>
+<li>Analyze the Big O complexity on Sorts.<ul>
+<li>Establish analytics including:time to sort, number of comparisons and number of swaps.- Average the results for each each Sort, run each at least 12 times and 5000 elements. You should throw out High and Low when doing analysis.</li>
+<li>Make your final/judgement on best sort: Number of Comparisons, Number of Swaps, Big O complexity, and Total Time.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnalysisOnSorts</span> <span class="p">{</span>
+    <span class="c1">// generate array of 5000 integers</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">GenerateDataForSortTest</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">9999</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// insertion sort code</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>  
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>  
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  
+            <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>  
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>  
+            <span class="k">while</span> <span class="p">(</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">array</span> <span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">key</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>  
+                <span class="n">array</span> <span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span> <span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>  
+                <span class="n">i</span><span class="o">--</span><span class="p">;</span>  
+            <span class="p">}</span>  
+            <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>  
+        <span class="p">}</span>  
+    <span class="p">}</span>  
+
+    <span class="c1">// selection sort code</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">){</span>  
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>  
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>  
+                <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">){</span>  
+                    <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span><span class="c1">//searching for lowest index  </span>
+                <span class="p">}</span>  
+            <span class="p">}</span>  
+            <span class="kt">int</span> <span class="n">smallerNumber</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>   
+            <span class="n">arr</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>  
+            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">smallerNumber</span><span class="p">;</span>  
+        <span class="p">}</span>  
+    <span class="p">}</span> 
+
+    <span class="c1">// bubble sort code</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="o">[]</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// swap arr[j+1] and arr[j]</span>
+                    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                    <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                    <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+                <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Merges two subarrays of arr[].</span>
+    <span class="c1">// First subarray is arr[l..m]</span>
+    <span class="c1">// Second subarray is arr[m+1..r]</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Find sizes of two subarrays to be merged</span>
+        <span class="kt">int</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span>
+ 
+        <span class="cm">/* Create temp arrays */</span>
+        <span class="kt">int</span> <span class="n">L</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n1</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">R</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n2</span><span class="o">]</span><span class="p">;</span>
+ 
+        <span class="cm">/*Copy data to temp arrays*/</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">L</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">R</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">j</span><span class="o">]</span><span class="p">;</span>
+ 
+        <span class="cm">/* Merge the temp arrays */</span>
+ 
+        <span class="c1">// Initial indexes of first and second subarrays</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 
+        <span class="c1">// Initial index of merged subarray array</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">L</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">R</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">L</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">R</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+ 
+        <span class="cm">/* Copy remaining elements of L[] if any */</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">L</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+ 
+        <span class="cm">/* Copy remaining elements of R[] if any */</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">R</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+ 
+
+    <span class="c1">// mergeSort</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Find the middle point</span>
+            <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+ 
+            <span class="c1">// Sort first and second halves</span>
+            <span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">middle</span><span class="p">);</span>
+            <span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+ 
+            <span class="c1">// Merge the sorted halves</span>
+            <span class="n">merge</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">middle</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">float</span><span class="o">[]</span> <span class="nf">sortWithAlgosAndPrint</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;---------------------------------------------------------------------------------------------&quot;</span><span class="p">);</span>
+
+        <span class="c1">// create an array with 5000 elements</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">dataSet1</span> <span class="o">=</span> <span class="n">GenerateDataForSortTest</span><span class="p">();</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">dataSet2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">dataSet3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">dataSet4</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">dataSet1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dataSet2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">dataSet1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dataSet3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">dataSet1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dataSet4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+
+        <span class="kt">float</span><span class="o">[]</span> <span class="n">sortTimeTaken</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">float</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+        
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">insertionSort</span><span class="p">(</span><span class="n">dataSet1</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">sortTimeTaken</span> <span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+
+        <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">selectionSort</span><span class="p">(</span><span class="n">dataSet2</span><span class="p">);</span>
+        <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">sortTimeTaken</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+
+        <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">bubbleSort</span><span class="p">(</span><span class="n">dataSet3</span><span class="p">);</span>
+        <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">sortTimeTaken</span> <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+
+        <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">mergeSort</span><span class="p">(</span><span class="n">dataSet4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dataSet4</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span><span class="mi">1</span> <span class="p">);</span>
+        <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">sortTimeTaken</span> <span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+        
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span><span class="n">sortTimeTaken</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;  nano secs ---- &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">sortTimeTaken</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Insertion Sort ---- Selection Sort ---- Bubble Sort ---- Merge Sort&quot;</span><span class="p">);</span>
+
+        <span class="kt">float</span><span class="o">[]</span> <span class="n">avgs</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">float</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+        
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">float</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sortWithAlgosAndPrint</span><span class="p">();</span>
+            
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">avgs</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">+=</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">avgs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">/=</span> <span class="mi">12</span><span class="p">;</span>
+            <span class="n">avgs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">avgs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; ========================================================================================= &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Average: &quot;</span> <span class="o">+</span> <span class="n">avgs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;  nano secs ----  &quot;</span> <span class="o">+</span> <span class="n">avgs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;  nano secs ---- &quot;</span> <span class="o">+</span> <span class="n">avgs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;  nano secs ----  &quot;</span> <span class="o">+</span> <span class="n">avgs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;  nano secs ---- &quot;</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">AnalysisOnSorts</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Insertion Sort ---- Selection Sort ---- Bubble Sort ---- Merge Sort
+---------------------------------------------------------------------------------------------
+1.5418458E7  nano secs ---- 1.7389584E7  nano secs ---- 2.003875E7  nano secs ---- 1983625.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1.0570333E7  nano secs ---- 1.2054334E7  nano secs ---- 1.5686459E7  nano secs ---- 1671708.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1949709.0  nano secs ---- 9254334.0  nano secs ---- 1.5307584E7  nano secs ---- 1797708.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1844084.0  nano secs ---- 1.0287334E7  nano secs ---- 1.0651917E7  nano secs ---- 452458.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1924708.0  nano secs ---- 1.2092875E7  nano secs ---- 1.5872375E7  nano secs ---- 405000.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1913625.0  nano secs ---- 1.0103709E7  nano secs ---- 1.5496583E7  nano secs ---- 423500.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1843167.0  nano secs ---- 1.0139709E7  nano secs ---- 1.538575E7  nano secs ---- 373959.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1841125.0  nano secs ---- 1.0357666E7  nano secs ---- 1.5427542E7  nano secs ---- 435917.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1953208.0  nano secs ---- 9982125.0  nano secs ---- 1.540125E7  nano secs ---- 374000.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1876917.0  nano secs ---- 1.032175E7  nano secs ---- 1.5638041E7  nano secs ---- 407375.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+1891875.0  nano secs ---- 1.033775E7  nano secs ---- 1.1047208E7  nano secs ---- 393042.0  nano secs ---- 
+---------------------------------------------------------------------------------------------
+2034708.0  nano secs ---- 1.0464333E7  nano secs ---- 1.2431208E7  nano secs ---- 384792.0  nano secs ---- 
+ ========================================================================================= 
+Average: 2147483.0  nano secs ----  2147483.0  nano secs ---- 2147483.0  nano secs ----  758590.0  nano secs ---- 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Insertion Sort analysis: Runs at O(n^2)<ul>
+<li>The best case scenario is O(n) if sorted</li>
+</ul>
+</li>
+<li>Selection Sort analysis: Runs at O(n^2)<ul>
+<li>This is regardless of the order the integers come at</li>
+</ul>
+</li>
+<li>Bubble Sort analysis: Runs at O(n^2)<ul>
+<li>The best case scenario for a bubble sort is O(n) <ul>
+<li>This is only if the list has already been sorted</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Merge Sort analysis: Runs at O(n log n)</li>
+</ul>
+<h2 id="Hashmaps-and-Big-O-Hack-2">Hashmaps and Big O Hack 2<a class="anchor-link" href="#Hashmaps-and-Big-O-Hack-2"> </a></h2><ul>
+<li>Build your own Hashmap. Make a HashMap to correspond to a Data Structure using a Collection.<ul>
+<li>Be sure to have 5000 records</li>
+<li>Perform analysis on Binary Search vs HashMap Lookup, try using random to search and find 100 keys in 5000 records. Perform 12 times and throw out high and low.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.Integer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashMapVSBinarySearch</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">hashMapFind</span><span class="p">(</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">,</span> <span class="n">Integer</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">map</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">binarySearchFind</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="n">Integer</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mapDataSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">bsDataSet</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">9999</span><span class="p">);</span>
+            <span class="n">mapDataSet</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+            <span class="n">bsDataSet</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="p">}</span>
+
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;HashMap find | BinarySearch&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-------------------------------&quot;</span><span class="p">);</span>
+
+        <span class="kt">double</span> <span class="n">totalTimeTakenMap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">totalTimeTakenBS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="c1">// get num to search for from scanner</span>
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter a number to search for: &quot;</span><span class="p">);</span>
+        <span class="n">Integer</span> <span class="n">num</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span> 
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Time Taken to search  &quot;</span> <span class="o">+</span> <span class="n">num</span> <span class="o">+</span> <span class="s">&quot; with &quot;</span> <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;|     BinarySearch       |   HashMap      | &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==========================================&quot;</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="c1">// check look up time for hash map</span>
+            <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;|      &quot;</span><span class="p">;</span>
+
+            <span class="kt">long</span> <span class="n">timeTaken</span> <span class="o">=</span> <span class="n">binarySearchFind</span><span class="p">(</span><span class="n">bsDataSet</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+            <span class="n">totalTimeTakenBS</span> <span class="o">+=</span> <span class="n">timeTaken</span><span class="p">;</span>
+            <span class="n">str</span> <span class="o">+=</span> <span class="p">(</span><span class="n">timeTaken</span> <span class="o">+</span> <span class="s">&quot; ns      | &quot;</span><span class="p">);</span>
+
+            <span class="n">timeTaken</span> <span class="o">=</span> <span class="n">hashMapFind</span><span class="p">(</span><span class="n">mapDataSet</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+            <span class="n">totalTimeTakenMap</span> <span class="o">+=</span> <span class="n">timeTaken</span><span class="p">;</span>
+            <span class="n">str</span> <span class="o">+=</span> <span class="p">(</span><span class="n">timeTaken</span> <span class="o">+</span> <span class="s">&quot; ns       |       &quot;</span><span class="p">);</span>
+            
+  
+          
+
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==========================================&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Average: &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">totalTimeTakenBS</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; ns | &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">totalTimeTakenMap</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; ns&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">HashMapVSBinarySearch</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HashMap find | BinarySearch
+-------------------------------
+Enter a number to search for: 
+Time Taken to search  434 with 
+|     BinarySearch       |   HashMap      | 
+==========================================
+|      2834 ns      | 7917 ns       |       
+|      2667 ns      | 1500 ns       |       
+|      917 ns      | 166 ns       |       
+|      875 ns      | 208 ns       |       
+|      791 ns      | 125 ns       |       
+|      875 ns      | 167 ns       |       
+|      875 ns      | 167 ns       |       
+|      834 ns      | 167 ns       |       
+|      791 ns      | 166 ns       |       
+|      792 ns      | 167 ns       |       
+|      791 ns      | 84 ns       |       
+|      875 ns      | 83 ns       |       
+==========================================
+Average: 1159.75 ns | 909.75 ns
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hashmaps-and-Big-O-Extra-Hack">Hashmaps and Big O Extra Hack<a class="anchor-link" href="#Hashmaps-and-Big-O-Extra-Hack"> </a></h2><ul>
+<li>Extra, Practical learning<ul>
+<li>Performing Iteration, Delete, and Add operations are another way to analyze Collection vs HashMap data structure.</li>
+<li>A HashMap and a Collection can be used in a Class, POJO and API.</li>
+<li>Make a Diagram on the Pros and Cons of Collection vs HashMap</li>
+</ul>
+</li>
+</ul>
+<h3 id="Pros-and-Cons-of-Collection-vs-HashMap">Pros and Cons of Collection vs HashMap<a class="anchor-link" href="#Pros-and-Cons-of-Collection-vs-HashMap"> </a></h3><table>
+<thead><tr>
+<th>HashMaps</th>
+<th></th>
+<th></th>
+<th>Collections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pros</strong></td>
+<td><strong>Cons</strong></td>
+<td><strong>Pros</strong></td>
+<td><strong>Cons</strong></td>
+</tr>
+<tr>
+<td>Built-in methods for search/sort such as containsKey() or getValue()</td>
+<td>No order of elements, no sorting</td>
+<td>Easy for simple uses like when you don't need key:value pairs</td>
+<td>Java doesn't integrate any methods to search or sort</td>
+</tr>
+<tr>
+<td>Retrieving a value from a key is very fast</td>
+<td>More memory usage than collections</td>
+<td>Order of elements in a group, can reorder them too</td>
+<td>Key:value mapping isn't a thing</td>
+</tr>
+<tr>
+<td>Map keys to values</td>
+<td>Starts to get a bit weird / errors with duplicate keys</td>
+<td>Store and manipulate groups of objects</td>
+<td>Inefficient at getting a specific value</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="PranaviInukurti/fastpagescsa"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagescsa/jupyter/2023/04/05/hashmaps.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagescsa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

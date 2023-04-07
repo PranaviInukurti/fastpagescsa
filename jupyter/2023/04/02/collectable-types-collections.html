@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Collectable Types and Collections | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Collectable Types and Collections" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notebook from Trimester 3 (3/28/2023). This is a deeper review on the data structure, collections, which requires a deeper understanding of objects and the generic type." />
+<meta property="og:description" content="Notebook from Trimester 3 (3/28/2023). This is a deeper review on the data structure, collections, which requires a deeper understanding of objects and the generic type." />
+<link rel="canonical" href="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/02/collectable-types-collections.html" />
+<meta property="og:url" content="https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/02/collectable-types-collections.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Collectable Types and Collections" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-02T00:00:00-05:00","datePublished":"2023-04-02T00:00:00-05:00","description":"Notebook from Trimester 3 (3/28/2023). This is a deeper review on the data structure, collections, which requires a deeper understanding of objects and the generic type.","headline":"Collectable Types and Collections","mainEntityOfPage":{"@type":"WebPage","@id":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/02/collectable-types-collections.html"},"url":"https://pranaviinukurti.github.io/fastpagescsa/jupyter/2023/04/02/collectable-types-collections.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagescsa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagescsa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagescsa/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagescsa/about/">About Me</a><a class="page-link" href="/fastpagescsa/search/">Search</a><a class="page-link" href="/fastpagescsa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Collectable Types and Collections</h1><p class="page-description">Notebook from Trimester 3 (3/28/2023). This is a deeper review on the data structure, collections, which requires a deeper understanding of objects and the generic type.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-02T00:00:00-05:00" itemprop="datePublished">
+        Apr 2, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagescsa/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/PranaviInukurti/fastpagescsa/tree/master/_notebooks/2023-04-02-collectable-types-collections.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagescsa/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/PranaviInukurti/fastpagescsa/master?filepath=_notebooks%2F2023-04-02-collectable-types-collections.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/PranaviInukurti/fastpagescsa/blob/master/_notebooks/2023-04-02-collectable-types-collections.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FPranaviInukurti%2Ffastpagescsa%2Fblob%2Fmaster%2F_notebooks%2F2023-04-02-collectable-types-collections.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagescsa/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-02-collectable-types-collections.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hack-Instructions">Hack Instructions<a class="anchor-link" href="#Hack-Instructions"> </a></h2><ul>
+<li>Watch the college board video Classes and Objects* Blog and Define the details of a Class: Access modifier, constructor, modifiers/setters, getters, etc.</li>
+<li>Build example code in jupyter notebook with Linked List, Queues, and Stacks.</li>
+<li>Show familiarity with managing data (aka nodes in LL) in these structures.</li>
+<li>Show familiarity with Generic data and ForEach loop support, similar to ArrayLists T. Here is sample Java Generic T and the Java Iterable interface by Geeks4Geeks.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="College-Board-Video-Notes">College Board Video Notes<a class="anchor-link" href="#College-Board-Video-Notes"> </a></h3><p><strong>Public Interface of a Class</strong></p>
+
+<pre><code>public class Person
+{
+    public Person(String name, int age, String Location)
+    {...}
+
+    public String getName()
+    {...}
+
+    public in getAge()
+    {...}
+
+    public String getLocation()
+    {...}
+
+    public void changeLocation(String newLocation)
+    {...}
+
+    public void haveABirthday()
+    {...}
+}</code></pre>
+<ul>
+<li>we have a constructor with parameters<ul>
+<li>the parameters show that the person has a name, age, and location</li>
+</ul>
+</li>
+<li>three methods which are getName, getAge, and getLocation<ul>
+<li>accessor methods, return a value (string or int)</li>
+</ul>
+</li>
+<li>mutator or modifier methods that change the state of the object<ul>
+<li>change the instance variables somehow (one has a parameter and another doesn't)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Construction Statements</strong></p>
+<ul>
+<li>Person teacher = new Person("Mr. Schultz", 39, "Ohio");</li>
+<li>Person student = new Person("Ketevan", 16, "Virginia");<ul>
+<li>person teacher and student is the class name (needed to declare class variable)</li>
+<li>student and teacher is the name of the object</li>
+<li>keyword new constructs the object<ul>
+<li>constructor is the same name as the class (in this case, Person)</li>
+</ul>
+</li>
+<li>actual parameters, in the parameters</li>
+</ul>
+</li>
+<li>two distinct objects using the same class (similar to a blueprint)</li>
+</ul>
+<p><strong>Using Objects</strong></p>
+
+<pre><code>public static void main(String[] args)
+{
+    Person teacher = new Person("Mr. Schultz", 39, "Ohio");
+    Person student = new Person("Ketevan", 16, "Virginia");
+
+    String.location = teacher.getLocation();
+    System.out.println(location);
+
+    student.haveABirthday();
+
+    System.out.println(student.getName());
+    System.out.println(student.getAge());
+
+    teacher.changeLocation("Florida");
+    System.out.println(teacher.getName());
+    System.out.println(teacher.getAge());
+}</code></pre>
+<ul>
+<li>teacher.getLocation is the syntax object.method<ul>
+<li>returns a variable (because it is an accessor method) and storing and catching the returned string into a variable</li>
+<li>then prints Ohio</li>
+</ul>
+</li>
+<li>student.haveABirthday is a mutator method (no return type)<ul>
+<li>not part of an assignment statement</li>
+<li>not trying to catch anything that gets returned</li>
+<li>call object.method and modify the state of the object<ul>
+<li>changes age</li>
+</ul>
+</li>
+<li>calling object.method in the context of a println statement<ul>
+<li>whatever is returned is going to go into system.out.println statement<ul>
+<li>prints out Ketevan and 17 because he had a birthday</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>teacher object.method calls mutator method again (changeLocation)<ul>
+<li>sending a parameter this time though (Florida)</li>
+<li>teacher.getName and teacher.getLocation are the accessor methods and return values right into print line statement<ul>
+<li>prints Mr. Schultz and Florida</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Using static methods</strong></p>
+<ul>
+<li>the Math class provides static methods that we can utilize through class.method convention</li>
+<li>classes have methods and don't have to create objects to use the methods in the class</li>
+<li>examples<ul>
+<li>System.out.println(Math.abs(-45));</li>
+<li>System.out.println(Math.pow(2,4));</li>
+<li>System.out.println(Math.sqrt(16.0));</li>
+</ul>
+</li>
+<li>Math.abs, Math.pow, and Math.sqrt are all class.method<ul>
+<li>prints out 45, 16, and 4.0</li>
+</ul>
+</li>
+</ul>
+<p><strong>Using String Class Objects</strong></p>
+<ul>
+<li>string is a class we create objects with<ul>
+<li>we don't have to say = new String, can just use ""<ul>
+<li>String word = "theater"</li>
+<li>index values starts from 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>to use methods of a string class on a string object, use object.method again<ul>
+<li>System.out.println(word.length());</li>
+<li>System.out.println(word.substring(1,5));</li>
+<li>System.out.println(word.indexOf("ate"));</li>
+</ul>
+</li>
+<li>string object is word<ul>
+<li>word.length is accessor method that returns the number of characters in the string (7)</li>
+<li>word.substring(1,5) returns the substring beginning at index number 1 all the way to index number 5 (heat)</li>
+<li>word.indexOf("ate") gives a smaller string tells the first location, or the starting location, of that string in string object (3)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-Challenge-1">Hack Challenge 1<a class="anchor-link" href="#Hack-Challenge-1"> </a></h3><p>Add and Delete elements from Queue. Working with the code that is given, you will need to adjust Add and write Delete, to output from the Queue as follows.</p>
+
+<pre><code>Enqueued data: seven
+Words count: 1, data: seven 
+Enqueued data: slimy
+Words count: 2, data: seven slimy 
+Enqueued data: snakes
+Words count: 3, data: seven slimy snakes 
+Enqueued data: sallying
+Words count: 4, data: seven slimy snakes sallying 
+Enqueued data: slowly
+Words count: 5, data: seven slimy snakes sallying slowly 
+Enqueued data: slithered
+Words count: 6, data: seven slimy snakes sallying slowly slithered 
+Enqueued data: southward
+Words count: 7, data: seven slimy snakes sallying slowly slithered southward 
+Dequeued data: seven
+Words count: 6, data: slimy snakes sallying slowly slithered southward 
+Dequeued data: slimy
+Words count: 5, data: snakes sallying slowly slithered southward 
+Dequeued data: snakes
+Words count: 4, data: sallying slowly slithered southward 
+Dequeued data: sallying
+Words count: 3, data: slowly slithered southward 
+Dequeued data: slowly
+Words count: 2, data: slithered southward 
+Dequeued data: slithered
+Words count: 1, data: southward 
+Dequeued data: southward
+Words count: 0, data: null</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="PranaviInukurti/fastpagescsa"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagescsa/jupyter/2023/04/02/collectable-types-collections.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagescsa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://pranaviinukurti.github.io/fastpagescsa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/fastpagescsa/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
