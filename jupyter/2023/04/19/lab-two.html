@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -265,9 +265,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">//Example finding the max in an array. </span>
-
-<span class="c1">//Finds the maximum in an array</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//Finds the maximum in an array</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">average</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// put your code here</span>
     <span class="kt">int</span> <span class="n">avg</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -275,13 +273,12 @@ window.onload = wrap_img;
         <span class="n">avg</span> <span class="o">+=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="n">avg</span> <span class="o">/=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">avg</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">//tester array</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">test</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
 
-<span class="c1">//returns 10</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="n">test</span><span class="p">));</span>
 </pre></div>
 
@@ -295,7 +292,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0
+<pre>5
 </pre>
 </div>
 </div>
@@ -324,7 +321,103 @@ window.onload = wrap_img;
 </ul>
 </li>
 </ul>
-<h3 id="Traversing-a-2D-Array">Traversing a 2D Array<a class="anchor-link" href="#Traversing-a-2D-Array"> </a></h3><h2 id="--Important-to-think-of-whether-the-array-is-column-or-row-major-order">- Important to think of whether the array is column or row major order<a class="anchor-link" href="#--Important-to-think-of-whether-the-array-is-column-or-row-major-order"> </a></h2>
+<h3 id="Traversing-a-2D-Array">Traversing a 2D Array<a class="anchor-link" href="#Traversing-a-2D-Array"> </a></h3><ul>
+<li>Important to think of whether the array is column or row major order</li>
+<li>need to use nested for loops or nested enhanced for loops</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-3">Hack 3<a class="anchor-link" href="#Hack-3"> </a></h3><p>Find the average number of a diagonal in a 2d array</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">averageDiagonal</span> <span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// your code here</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// checks if the current element is on the diagonal</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">sum</span> <span class="o">/</span> <span class="n">count</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">average</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">averageDiagonal</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2018-FRQ-Question-4">2018 FRQ Question 4<a class="anchor-link" href="#2018-FRQ-Question-4"> </a></h3><p>This question involves reasoning about arrays of integers. You will write two static methods, both of which are in a class named ArrayTester.
+<img src="/fastpagescsa/images/copied_from_nb/../images/2018frq.png" alt="2018frq" /></p>
+<p>Complete method getColumn below.</p>
+
+<pre><code>/** Returns an array containing the elements of a column c of arr2D in the same order as they appear in arr2D.
+* Precondition c is a valid column index in arr2D
+* Postcondition arr2D is unchanged
+*/
+public static int[] getColumn(int [][] arr2D, int c)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/fastpagescsa/images/copied_from_nb/../images/2018frqpartb.png" alt="2018frqpartb" /></p>
+<p>Complete method isLatin below. Assume that getColumn works as specified, regardless of what you wrote in part (a). You must use getColumn, hasAllValues, and containDuplicates appropriately to receive full credit.</p>
+
+<pre><code>/** Returns true if square is a Latin square as described in parat (b);
+*              false otherwise.
+* Precondition square has an equal number of rows and columns
+*              square has at least one row
+*/
+public static boolean isLatin(int[][] square)</code></pre>
+
 </div>
 </div>
 </div>
